@@ -1,0 +1,280 @@
+
+
+<!DOCTYPE html>
+<html>
+	
+<head>
+
+<title>Event Registration Form</title>
+
+
+</head>
+
+  <body>
+  
+  <style>
+      body{
+    background-image:url('https://4.imimg.com/data4/UU/DK/MY-5400256/college-festival-500x500.jpg');
+	opacity:0.8;
+     background-repeat:no-repeat ;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+	
+      }
+  </style>
+  <div id="main">
+  <div class="h-tag">
+ <center> <h2>Event Registration Form</h2></center>
+  </div>
+  
+  <div class="login">
+  <table cellspacing="2" align="center" cellpadding="8" border="0">
+  <tr>
+  <td align="right">Enter Name :</td>
+  <td><input type="text" placeholder="Enter user here" id="t1" class="tb" /></td>
+  </tr>
+  <tr>
+  <td align="right">Enter Email ID :</td>
+  <td><input type="text" placeholder="Enter Email ID here" id="t2" class="tb" /></td>
+  </tr>
+  <tr>
+	<td align="right">College name :</td>
+	<td><input type="text" placeholder="Name of the college" id="t3" class="tb" /></td>
+	</tr>
+  <tr>
+  <td align="right">Enter Username :</td>
+  <td><input type="text" placeholder="Enter Username here" id="t4" class="tb" /></td>
+  </tr>
+  <tr>
+  <td align="right">Enter Password :</td>
+  <td><input type="password" placeholder="Enter Password here" id="t5" class="tb" /></td>
+  </tr>
+  <tr>
+  <td align="right">Enter Confirm Password :</td>
+  <td><input type="password" placeholder="Enter Password here" id="t6" class="tb" /></td>
+  </tr><tr>
+    <td align="right">Course:</td>
+    <td>
+
+  </label>   
+  <select id="ddlView">  
+  <option value="0"></option>  
+  <option value="1">BE</option>  
+  <option value="2">B.Tech</option>  
+  <option value="3">MBA</option>  
+  <option value="4">MCA</option>  
+  <option value="5">M.Tech</option>  
+ </select><input type="button" class="btn" value="Submit" id="btnSubmit" onclick="ddlValidate()" /> 
+    </td>
+</tr>
+<script type="text/javascript">
+	function ddlValidate()
+	{
+		var e = document.getElementById("ddlView");
+		var strUser = e.options[e.selectedIndex].value;
+
+		var strUser1 = e.options[e.selectedIndex].text;
+		if(strUser==0)
+		{
+			alert('Please select a option');
+		}
+	}
+</script>
+ 
+<tr>
+    <td align="right">Gender :</td>
+    <td>
+
+</label><br>  
+<input type="radio" id = "Male" name="male"/> Male <br>  
+<input type="radio" id = "Female" name="female"/> Female <br>  
+<input type="radio" id = "Other" name="other"/> Other  
+<br> <button type="button" onclick=" checkButton()"> Submit </button> 
+
+ </td>
+</tr>
+<script>  
+	function checkButton()
+	 {  if(document.getElementById('Male').checked) {   
+					   
+						document.getElementById("Male").value   
+						alert( ' radio button is checked');   
+				}   
+				else if(document.getElementById('Female').checked) {   
+					 document.getElementById("Female").value   
+						alert( ' radio button is checked');    
+				}   
+				else if(document.getElementById('Other').checked) {   
+					 document.getElementById("Other").value   
+						alert( ' radio button is checked');     
+			   
+				
+				}  
+
+				
+				else {   
+					
+						alert('You have not selected any choice');   
+				}   
+			}   
+		</script>   
+	</html>  
+
+<br> 
+<tr>
+    <td align="right">Phonenumber :</td>
+
+
+
+
+
+<td>
+</label>  
+
+<input type="text" name="phonenumber"id="phno" size="10" /> <button type= "button" size="1" onclick="phonenumberr(inputtxt)">Enter</button> <br> <br>  
+ </td></tr> 
+ <script>
+ function phonenumberr(inputtxt)
+ {
+   var phoneno = /^\d{10}$/;
+   if(ph)
+		 {
+			 alert('valid phone no')
+	   return true;
+		 }
+	   else
+		 {
+		 alert('invalid phone no');
+		 return false;
+		 }
+ }
+ 
+</script>
+ <tr>
+     <td align="right">Address :</td>
+     <td>
+
+<textarea align="left" cols="50" rows="3" value="Address :">  
+</textarea>  
+<br> <br>
+</td>
+</tr>
+
+  
+<label>
+  <tr>
+  <td></td>
+  <td>
+  <input type="reset" value="Clear Form" onclick="clearFunc()" id="res" class="btn" />
+  <input type="submit" value="Register" class="btn" onclick="registration()" value="select" /></td>
+  </tr>
+  
+  </table>
+ 
+  
+<br>  
+<br>  
+<label>   
+  </div>
+  
+  </div>
+  
+  <script>
+
+function registration()
+	{
+
+		var name= document.getElementById("t1").value;
+		var email= document.getElementById("t2").value;
+		var clgname= document.getElementById("t3").value;
+		var uname= document.getElementById("t4").value;
+		var pwd= document.getElementById("t5").value;			
+		var cpwd= document.getElementById("t6").value;
+		
+		
+		
+        
+		var pwd_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
+		var letters = /^[A-Za-z]+$/;
+		var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+		if(name=='')
+		{
+			alert('Please enter your name');
+		}
+		else if(!letters.test(name))
+		{
+			alert('Name field required only alphabet characters');
+		}
+		else if(email=='')
+		{
+			alert('Please enter your user email id');
+		}
+		else if (!filter.test(email))
+		{
+			alert('Invalid email');
+		}
+		else if(clgname=='')
+		{
+			alert('enter the college name');
+		}
+		else if(uname=='')
+		{
+			alert('Please enter the user name.');
+		}
+		else if(!letters.test(uname))
+		{
+			alert('User name field required only alphabet characters');
+		}
+		else if(pwd=='')
+		{
+			alert('Please enter Password');
+		}
+		else if(cpwd=='')
+		{
+			alert('Enter Confirm Password');
+		}
+		else if(!pwd_expression.test(pwd))
+		{
+			alert ('Upper case, Lower case, Special character and Numeric letter are required in Password filed');
+		}
+		else if(pwd != cpwd)
+		{
+			alert ('Password not Matched');
+		}
+		else if(document.getElementById("t6").value.length < 6)
+		{
+			alert ('Password minimum length is 6');
+		}
+		else if(document.getElementById("t6").value.length > 12)
+		{
+			alert ('Password max length is 12');
+		}
+		
+
+
+
+		
+		
+		else
+		{				                            
+               alert('Thank You for Login ');
+			     // Redirecting to other page or webste code. 
+				 window.location = "home.html";
+		}
+	}
+	function clearFunc()
+	{
+		document.getElementById("t1").value="";
+		document.getElementById("t2").value="";
+		document.getElementById("t3").value="";
+		document.getElementById("t4").value="";
+		document.getElementById("t5").value="";
+		document.getElementById("t6").value="";
+	}
+	
+   
+
+  </script>
+  </body>
+  </html>
